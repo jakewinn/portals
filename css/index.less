@@ -183,6 +183,26 @@ body {
   color: #171c2b;
   font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
 }
+
+/* 修改垂直滚动条 */
+::-webkit-scrollbar {
+  width: 6px; /* 修改宽度 */
+}
+
+/* 修改滚动条轨道背景色 */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* 修改滚动条滑块颜色 */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* 修改滚动条滑块悬停时的颜色 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
 .content-wrap {
   background-color: #000;
   .content-center {
@@ -208,42 +228,41 @@ body {
 }
 
 .content-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  .title-wrap {
+    font-size: 32px;
+    font-weight: 700;
     color: #fff;
-    .title-wrap {
-        font-size: 32px;
-        font-weight: 700;
-        color: #fff;
-        .time{
-            font-size: 32px;
-            color: #ca2744;
-            margin-left: 4px;
-        }
+    .time {
+      font-size: 32px;
+      color: #ca2744;
+      margin-left: 4px;
     }
-    .title-desc {
-        font-size: 16px;
-        font-weight: 400;
-        color: #fff;
-        line-height: 24px;
-        margin-top: 8px;
+  }
+  .title-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 24px;
+    margin-top: 8px;
+  }
+  .section-game {
+    height: 180px;
+  }
+  .secure-wrap {
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    .secure {
+      display: block;
+      height: 26px;
+      margin-right: 10px;
     }
-    .section-game{
-        height: 180px;
-    }
-    .secure-wrap {
-        display: flex;
-        align-items: center;
-        margin-top: 13px;
-        .secure{
-            display: block;
-            height: 26px;
-            margin-right: 10px;
-        }
-    }
+  }
 }
-
 
 .game-wrap {
   .game-item {
@@ -252,7 +271,10 @@ body {
     height: 161px;
     color: #fff;
     border-bottom: 2px solid #87203a;
-    .game-left{
+    &:last-child {
+      border-bottom: none;
+    }
+    .game-left {
       width: 50%;
       height: 100%;
       text-align: center;
@@ -270,28 +292,28 @@ body {
         padding: 0 10px;
         box-sizing: border-box;
         .game-score-desc {
-          flex:1;
+          flex: 1;
           .star {
-            img{
+            img {
               width: 18px;
               height: 18px;
             }
           }
-          .star-desc{
+          .star-desc {
             font-size: 10px;
             color: #909090;
-            .prefix{
+            .prefix {
               font-weight: 600;
             }
           }
         }
         .game-score {
-          flex:1;
-          h2{
+          flex: 1;
+          h2 {
             font-weight: 700;
             font-size: 30px;
           }
-          .our-score{
+          .our-score {
             font-size: 10px;
             font-weight: 700;
             color: #909090;
@@ -304,14 +326,14 @@ body {
       height: 100%;
       text-align: center;
       background-color: #2e0014;
-      .title{
-        font-size:14px;
+      .title {
+        font-size: 14px;
         font-weight: 600;
         color: #ffce01;
-        margin:36px 0 6px 0;
+        margin: 36px 0 6px 0;
       }
       .bonus-desc {
-        font-size:14px;
+        font-size: 14px;
         font-weight: 700;
         margin-bottom: 5px;
       }
@@ -326,6 +348,95 @@ body {
         margin: 30px auto 0 auto;
         border-radius: 5px;
         background-color: #34b059;
+      }
+    }
+  }
+}
+
+.artice-wrap {
+  padding: 32px;
+  background-color: #fff;
+  .artice-content {
+    width: 800px;
+    margin: 0 auto;
+  }
+  .artice-title {
+    padding: 34px 0;
+    color: #171c2b;
+    font-size: 21px;
+    .mark {
+      text-decoration: underline;
+    }
+  }
+  .artice-desc {
+    width: 782px;
+    font-size: 16px;
+    color: #171c2b;
+    line-height: 30px;
+    &.artice-desc-sort {
+      padding-top: 15px;
+    }
+    .strong {
+      color: #171c2b;
+      font-weight: 700;
+    }
+  }
+}
+
+.faq-wrap {
+  padding: 100px 0;
+  background-color: #f9f9f9;
+  .faq-content {
+    width: 1110px;
+    margin: 0 auto;
+    .faq-title {
+      font-weight: 700;
+    }
+  }
+}
+
+.footer-wrap {
+  padding: 64px 0;
+  background-color: #171c2b;
+  .footer-content {
+    display: flex;
+    width: 1110px;
+    margin: 0 auto;
+    .footer-logo {
+      height: 38px;
+    }
+    .footer-info {
+      margin-left: 80px;
+      color: #fff;
+      .title {
+        position: relative;
+        font-size: 20px;
+        padding-bottom: 20px;
+        &::after {
+          content: "";
+          display: block;
+          background-color: #848484;
+          width: 30px;
+          height: 2px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+      .link {
+        display: block;
+        margin-top: 24px;
+        font-size: 14px;
+        color: #fff;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .copyright {
+        width: 830px;
+        padding-top: 40px;
+        font-size: 12px;
+        color: #62666f;
       }
     }
   }

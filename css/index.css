@@ -168,6 +168,23 @@ body {
   color: #171c2b;
   font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
 }
+/* 修改垂直滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  /* 修改宽度 */
+}
+/* 修改滚动条轨道背景色 */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+/* 修改滚动条滑块颜色 */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+/* 修改滚动条滑块悬停时的颜色 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
 .content-wrap {
   background-color: #000;
 }
@@ -232,6 +249,9 @@ body {
   height: 161px;
   color: #fff;
   border-bottom: 2px solid #87203a;
+}
+.game-wrap .game-item:last-child {
+  border-bottom: none;
 }
 .game-wrap .game-item .game-left {
   width: 50%;
@@ -306,4 +326,90 @@ body {
   margin: 30px auto 0 auto;
   border-radius: 5px;
   background-color: #34b059;
+}
+.artice-wrap {
+  padding: 32px;
+  background-color: #fff;
+}
+.artice-wrap .artice-content {
+  width: 800px;
+  margin: 0 auto;
+}
+.artice-wrap .artice-title {
+  padding: 34px 0;
+  color: #171c2b;
+  font-size: 21px;
+}
+.artice-wrap .artice-title .mark {
+  text-decoration: underline;
+}
+.artice-wrap .artice-desc {
+  width: 782px;
+  font-size: 16px;
+  color: #171c2b;
+  line-height: 30px;
+}
+.artice-wrap .artice-desc.artice-desc-sort {
+  padding-top: 15px;
+}
+.artice-wrap .artice-desc .strong {
+  color: #171c2b;
+  font-weight: 700;
+}
+.faq-wrap {
+  padding: 100px 0;
+  background-color: #f9f9f9;
+}
+.faq-wrap .faq-content {
+  width: 1110px;
+  margin: 0 auto;
+}
+.faq-wrap .faq-content .faq-title {
+  font-weight: 700;
+}
+.footer-wrap {
+  padding: 64px 0;
+  background-color: #171c2b;
+}
+.footer-wrap .footer-content {
+  display: flex;
+  width: 1110px;
+  margin: 0 auto;
+}
+.footer-wrap .footer-content .footer-logo {
+  height: 38px;
+}
+.footer-wrap .footer-content .footer-info {
+  margin-left: 80px;
+  color: #fff;
+}
+.footer-wrap .footer-content .footer-info .title {
+  position: relative;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+.footer-wrap .footer-content .footer-info .title::after {
+  content: "";
+  display: block;
+  background-color: #848484;
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.footer-wrap .footer-content .footer-info .link {
+  display: block;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #fff;
+}
+.footer-wrap .footer-content .footer-info .link:hover {
+  text-decoration: underline;
+}
+.footer-wrap .footer-content .footer-info .copyright {
+  width: 830px;
+  padding-top: 40px;
+  font-size: 12px;
+  color: #62666f;
 }
