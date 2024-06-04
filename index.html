@@ -8,9 +8,8 @@
     <title>sociaplay page</title>
     <link rel="stylesheet" href="./css/index.css" />
   </head>
-  <body id="app">
-    <!-- <h1 v-cloak>{{message}}</h1> -->
-    <div class="content-wrap">
+  <body>
+    <div class="content-wrap" id="app">
       <div class="content-center">
         <header class="header-wrap">
           <img src="./img/logo.png" alt="logo" class="logo" />
@@ -514,7 +513,7 @@
       <div class="faq-wrap">
         <div class="faq-content">
           <h2 class="faq-title">Frequently Asked Questions(FAQ)</h2>
-          <div class="faq-list-wrap" v-cloak>
+          <div class="faq-list-wrap">
             <ul class="faq-list">
               <li class="faq-item">
                 <div class="faq-item-title">
@@ -677,7 +676,9 @@
         </div>
       </footer>
     </div>
-    <script type="importmap">
+    <script src="./js/vue.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- <script type="importmap">
       {
         "imports": {
           "vue": "./js/vue_esm_browser.js"
@@ -723,6 +724,6 @@
           };
         },
       }).mount("#app");
-    </script>
+    </script> -->
   </body>
 </html>
