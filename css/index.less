@@ -175,6 +175,10 @@ section,
 footer {
   display: block;
 }
+
+[v-cloak] {
+  display: none;
+}
 /**content**/
 html,
 body {
@@ -221,9 +225,38 @@ body {
     width: 156px;
   }
   .dispaly-wrapper {
+    position: relative;
     font-size: 14px;
     font-weight: 700;
     color: #fff;
+    &:hover {
+      .dispaly-wrapper-title {
+        color: #34b059;
+      }
+      .dispaly-wrapper-desc {
+        display: block;
+      }
+    }
+    .dispaly-wrapper-title {
+      cursor: pointer;
+    }
+    .dispaly-wrapper-desc {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translate(-50%);
+      width: 246px;
+      height: 210px;
+      padding: 10px;
+      line-height: initial;
+      color: #fff;
+      font-size: 12px;
+      font-weight: normal;
+      box-sizing: border-box;
+      border-radius: 4px;
+      background-color: #62666f;
+    }
   }
 }
 
@@ -346,8 +379,12 @@ body {
         color: #fff;
         text-align: center;
         margin: 30px auto 0 auto;
+        transition: 0.5s;
         border-radius: 5px;
         background-color: #34b059;
+        &:hover {
+          background-color: #fe9807;
+        }
       }
     }
   }
@@ -391,19 +428,56 @@ body {
     margin: 0 auto;
     .faq-title {
       font-weight: 700;
+      margin-bottom: 60px;
+    }
+    .faq-list-wrap {
+      display: flex;
+      .faq-game-img {
+        height: 218px;
+        margin-left: 96px;
+      }
     }
     .faq-item {
       width: 592px;
-      padding: 20px 24px;
-      background-color: #fff;
+      margin-bottom: 20px;
       box-sizing: border-box;
       .faq-item-title {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 20px 24px;
+        background-color: #fff;
+        border-radius: 8px;
         .faq-item-title-icon {
-          width: 32px;
-          height: 32px;
+          width: 26px;
+          height: 26px;
+          cursor: pointer;
+        }
+      }
+      .faq-item-content {
+        // display: none;
+        padding: 25px 27px;
+        transition: 0.5s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 10px 0;
+      }
+    }
+  }
+  .play-safe {
+    padding: 100px 0 0 0;
+    font-weight: 700;
+    text-align: center;
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .play-safe-img {
+      img {
+        margin-left: 20px;
+        &:first-child {
+          margin-left: 0px;
+        }
       }
     }
   }
@@ -451,6 +525,97 @@ body {
         padding-top: 40px;
         font-size: 12px;
         color: #62666f;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .content-wrap {
+    .content-center {
+      width: auto;
+    }
+    .artice-wrap {
+      .artice-content {
+        width: auto;
+      }
+      .artice-desc {
+        width: auto;
+      }
+    }
+    .faq-wrap {
+      .faq-content {
+        width: auto;
+        .faq-item {
+          width: auto;
+        }
+      }
+    }
+    .footer-wrap {
+      .footer-content {
+        width: auto;
+      }
+      .footer-info {
+        .copyright {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .header-wrap {
+    padding: 0 10px;
+  }
+  .dispaly-wrapper {
+    display: none;
+  }
+  .content-section {
+    .section-game {
+      display: none;
+    }
+    .secure-wrap {
+      display: none;
+    }
+    .title-wrap {
+      padding: 0 10px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      .time {
+        font-size: 20px;
+      }
+    }
+    .title-desc {
+      display: none;
+    }
+  }
+  .game-wrap .game-item {
+    height: 200px;
+  }
+  .faq-wrap {
+    .faq-content {
+      padding: 0 20px;
+      .faq-list-wrap {
+        .faq-game-img {
+          display: none;
+        }
+      }
+    }
+    .play-safe .play-safe-img img {
+      margin-bottom: 10px;
+    }
+  }
+  .footer-wrap {
+    .footer-content {
+      flex-direction: column;
+      padding: 0 20px;
+      .footer-logo {
+        width: 200px;
+        height: auto;
+        margin: 0 0 20px -10px;
+      }
+      .footer-info {
+        margin-left: 0px;
       }
     }
   }

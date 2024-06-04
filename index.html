@@ -3,15 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="sociaplay" />
+    <meta name="keywords" content="sociaplay" />
     <title>sociaplay page</title>
     <link rel="stylesheet" href="./css/index.css" />
   </head>
-  <body>
+  <body id="app">
+    <!-- <h1 v-cloak>{{message}}</h1> -->
     <div class="content-wrap">
       <div class="content-center">
         <header class="header-wrap">
           <img src="./img/logo.png" alt="logo" class="logo" />
-          <div class="dispaly-wrapper">DISCLOSURE</div>
+          <div class="dispaly-wrapper">
+            <span class="dispaly-wrapper-title">DISCLOSURE</span>
+            <div class="dispaly-wrapper-desc">
+              We are supported by referral fees from the advertisers presented
+              on this site and . We do not present information about every
+              advertiser or offer available. Except as expressly set forth in
+              our Terms of Use, all representations and warranties regarding the
+              information presented on this page are disclaimed. The
+              information, including pricing, which appears on this site is
+              subject to change at any time.
+            </div>
+          </div>
         </header>
         <section class="content-section">
           <div class="section-left">
@@ -500,24 +514,148 @@
       <div class="faq-wrap">
         <div class="faq-content">
           <h2 class="faq-title">Frequently Asked Questions(FAQ)</h2>
-          <ul class="faq-list">
-            <li class="faq-item">
-              <div class="faq-item-title">
-                <span>What is a Sweepstakes Casino?</span>
-                <img
-                  src="./img/jiahao.png"
-                  alt="添加"
-                  class="faq-item-title-icon"
-                />
-              </div>
-              <div class="faq-item-content">
-                Sweepstakes casinos are online platforms where you can play
-                casino-style games without real money wagering. They're designed
-                for entertainment, and you can typically play using virtual
-                currency.
-              </div>
-            </li>
-          </ul>
+          <div class="faq-list-wrap" v-cloak>
+            <ul class="faq-list">
+              <li class="faq-item">
+                <div class="faq-item-title">
+                  <span>What is a Sweepstakes Casino?</span>
+                  <img
+                    src="./img/jiahao.png"
+                    alt="添加"
+                    class="faq-item-title-icon"
+                    v-show="!onOffArr[0].onOff"
+                    @click="handleFaqItem(0)"
+                  />
+                  <img
+                    src="./img/jianhao.png"
+                    alt="减少"
+                    class="faq-item-title-icon"
+                    v-show="onOffArr[0].onOff"
+                    @click="handleFaqItem(0)"
+                  />
+                </div>
+                <div class="faq-item-content" v-show="onOffArr[0].onOff">
+                  Sweepstakes casinos are online platforms where you can play
+                  casino-style games without real money wagering. They're
+                  designed for entertainment, and you can typically play using
+                  virtual currency.
+                </div>
+              </li>
+              <li class="faq-item">
+                <div class="faq-item-title">
+                  <span>Are Sweepstake Casinos Legal in the US</span>
+                  <img
+                    src="./img/jiahao.png"
+                    alt="添加"
+                    class="faq-item-title-icon"
+                    v-show="!onOffArr[1].onOff"
+                    @click="handleFaqItem(1)"
+                  />
+                  <img
+                    src="./img/jianhao.png"
+                    alt="减少"
+                    class="faq-item-title-icon"
+                    v-show="onOffArr[1].onOff"
+                    @click="handleFaqItem(1)"
+                  />
+                </div>
+                <div class="faq-item-content" v-show="onOffArr[1].onOff">
+                  Yes, in most states. Sweeps casinos are legal as there's no
+                  real money gambling involved. aside from Idaho, Nevada, and
+                  Washington.
+                </div>
+              </li>
+              <li class="faq-item">
+                <div class="faq-item-title">
+                  <span
+                    >Do I Need to Make a Purchase to Play at Sweepstake
+                    Casinos?</span
+                  >
+                  <img
+                    src="./img/jiahao.png"
+                    alt="添加"
+                    class="faq-item-title-icon"
+                    v-show="!onOffArr[2].onOff"
+                    @click="handleFaqItem(2)"
+                  />
+                  <img
+                    src="./img/jianhao.png"
+                    alt="减少"
+                    class="faq-item-title-icon"
+                    v-show="onOffArr[2].onOff"
+                    @click="handleFaqItem(2)"
+                  />
+                </div>
+                <div class="faq-item-content" v-show="onOffArr[2].onOff">
+                  No, you can participate in sweepstake casino games without
+                  making a purchase. They often provide a way to obtain free
+                  sweepstakes entries or virtual currency.
+                </div>
+              </li>
+              <li class="faq-item">
+                <div class="faq-item-title">
+                  <span
+                    >Are there Age Restrictions for Playing at These Sweepstakes
+                    Casinos?</span
+                  >
+                  <img
+                    src="./img/jiahao.png"
+                    alt="添加"
+                    class="faq-item-title-icon"
+                    v-show="!onOffArr[3].onOff"
+                    @click="handleFaqItem(3)"
+                  />
+                  <img
+                    src="./img/jianhao.png"
+                    alt="减少"
+                    class="faq-item-title-icon"
+                    v-show="onOffArr[3].onOff"
+                    @click="handleFaqItem(3)"
+                  />
+                </div>
+                <div class="faq-item-content" v-show="onOffArr[3].onOff">
+                  You must be 18+ and located within a state where social casino
+                  is legal to participate.
+                </div>
+              </li>
+              <li class="faq-item">
+                <div class="faq-item-title">
+                  <span>What Types of Games Can I Play at Sweeps Casinos?</span>
+                  <img
+                    src="./img/jiahao.png"
+                    alt="添加"
+                    class="faq-item-title-icon"
+                    v-show="!onOffArr[4].onOff"
+                    @click="handleFaqItem(4)"
+                  />
+                  <img
+                    src="./img/jianhao.png"
+                    alt="减少"
+                    class="faq-item-title-icon"
+                    v-show="onOffArr[4].onOff"
+                    @click="handleFaqItem(4)"
+                  />
+                </div>
+                <div class="faq-item-content" v-show="onOffArr[4].onOff">
+                  Sweeps casinos offer a wide range of games, including slots,
+                  poker, blackjack, roulette, and more, all played with virtual
+                  currency for entertainment.
+                </div>
+              </li>
+            </ul>
+            <img src="./img/game.png" alt="game" class="faq-game-img" />
+          </div>
+        </div>
+        <!-- play safely -->
+        <div class="play-safe">
+          <h3>Play Safely &amp; Responsibly</h3>
+          <div class="play-safe-img">
+            <img src="./img/foot_1.png" alt="Responsibly" />
+            <img src="./img/foot_2.png" alt="Responsibly" />
+            <img src="./img/foot_3.gif" alt="Responsibly" />
+            <img src="./img/foot_4.png" alt="Responsibly" />
+            <img src="./img/foot_5.png" alt="Responsibly" />
+          </div>
         </div>
       </div>
 
@@ -539,5 +677,52 @@
         </div>
       </footer>
     </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "./js/vue_esm_browser.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import { createApp, ref } from "vue";
+      createApp({
+        setup() {
+          const onOffArr = ref([
+            {
+              onOff: false,
+            },
+            {
+              onOff: false,
+            },
+            {
+              onOff: false,
+            },
+            {
+              onOff: false,
+            },
+            {
+              onOff: false,
+            },
+          ]);
+          const currentIndex = ref(0);
+          const handleFaqItem = (index) => {
+            currentIndex.value = index;
+            onOffArr.value.forEach((item, i) => {
+              if (i === index) {
+                item.onOff = !item.onOff;
+              } else {
+                item.onOff = false;
+              }
+            });
+          };
+          return {
+            onOffArr,
+            currentIndex,
+            handleFaqItem,
+          };
+        },
+      }).mount("#app");
+    </script>
   </body>
 </html>
