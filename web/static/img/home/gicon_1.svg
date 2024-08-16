@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="quanbu" class="cls-1" d="M23.626,30.02V22.154l7.044-.181v7.141Zm0-21.564,7.044,2.172v8.407l-7.044-.181V8.456ZM9.326,22.493l10.855-.236v8.586l-9.575,2.139ZM5.607,4.351L19.743,6.345V18.317L7.274,18Z"/>
+</svg>
