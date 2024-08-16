@@ -1,0 +1,1 @@
+import{D as s,e as o,o as t,N as a}from"./index-DNIAV8HF.js";import{o as r}from"./uni-app.es.DZGuvpgg.js";const e={__name:"sports",setup:e=>(r((()=>{s()})),(s,r)=>{const e=a;return t(),o(e,{src:"https://www.baidu.com/"})})};export{e as default};
