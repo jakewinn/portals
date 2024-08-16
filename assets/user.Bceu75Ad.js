@@ -1,0 +1,1 @@
+import{ab as e,E as n}from"./index-DzvbXl_o.js";const a=e("user",(()=>{const e=n("wcx"),a=n("123456");return{username:e,psd:a,loginState:function(){return"admin"==e.value&&"123456"==a.value}}}));export{a as u};
